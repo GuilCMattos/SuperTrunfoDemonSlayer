@@ -94,9 +94,12 @@ function sortearCarta() {
 function exibirOpcoes() { 
     let opcoes = document.getElementById("opcoes")
     var opcoesTexto = ""
+    opcoesTexto += "<strong><span class='titleCard'>"+ cartaJogador.nome + "</span></strong>" + "<br><br>" 
+    opcoesTexto += "<img class='imgRes' src="+cartaJogador.imagem+"><br><br>" 
+    opcoesTexto += "<h2>Características: </h2> Ataque: <strong>" + cartaJogador.atributos.ataque + "</strong> Defesa: <strong>" + cartaJogador.atributos.defesa + "</strong> Magia: <strong>" + cartaJogador.atributos.magia + "</strong> <br> <br>"
 
     for (var atributo in cartaJogador.atributos) { 
-        opcoesTexto += "<input class= 'checkmark' type='radio' checked='true' name='atributo' value="+atributo+">" +  atributo + " <br> <br> " 
+        opcoesTexto += "<input class= 'checkmark' type='radio' checked='true' name='atributo' value="+atributo+">" +  atributo + " <br><br> "
     }
 
     opcoes.innerHTML = opcoesTexto
